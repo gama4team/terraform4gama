@@ -80,7 +80,7 @@ resource "aws_internet_gateway" "IG" {
 resource "aws_route_table" "route_table_IG" {
     vpc_id  = aws_vpc.vpc_default.id
     tags = {
-        Name     = format("%s-%s-%s", var.project_name, "Route_Table_IG_", var.project)
+        Name     = format("%s-%s", var.project_name, "_Route_Table_IG_")
         Project  = var.project_name
         Ambiente = var.ambiente
     }
