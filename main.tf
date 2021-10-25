@@ -6,4 +6,5 @@ module "modulevpc" {
     InstanceTenancy  = var.instance_tenancy
     availabilityZone = var.availability_zone
     project_name     = var.project_name
+    ambiente	     = var.ambiente
 }
