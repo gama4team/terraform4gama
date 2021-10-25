@@ -18,20 +18,6 @@ resource "aws_vpc_dhcp_options" "dns_resolver" {
   domain_name_servers = var.DNSresolverDHCP
 }
 
-resource "aws_flow_log" "flow_logs_VPC" {
-  log_destination      = aws_s3_bucket.bucket_flow.arn
-  log_destination_type = "s3"
-  traffic_type         = "ALL"
-  vpc_id               = aws_vpc.vpc_default.id
-
-  depends_on = [ aws_s3_bucket.bucket_flow ]
-}
-
-resource "aws_s3_bucket" "bucket_flow" {
-  bucket = "team4gama"
-  acl    = "private"
-}
-
 ## Create Private subnets ##
 
 resource "aws_subnet" "subnetprivada" {
