@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "region"
+  region = var.aws_region
 }
 
 #terraform {
